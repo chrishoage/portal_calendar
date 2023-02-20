@@ -84,7 +84,9 @@ bool startWifi()
     if (WiFi.status() == WL_CONNECTED) {
         return true;
     }
-    DEBUG_PRINT("Starting WiFi");
+    DEBUG_PRINT("Starting WiFi with hostname %s", HOSTNAME);
+    WiFi.setHostname(HOSTNAME);
+
     unsigned long start = millis();
     #ifdef WIFI_PASS
     WiFi.begin(WIFI_NAME, WIFI_PASS);
@@ -117,7 +119,9 @@ void errorNoWifi()
         "or you entered the wrong password.",
         "",
         "WiFi Name:",
-        "\"" WIFI_NAME "\""
+        "\"" WIFI_NAME "\"",
+        "Hostname:",
+        "\"" HOSTNAME "\"",
     });
 }
 
