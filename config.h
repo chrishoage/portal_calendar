@@ -161,10 +161,12 @@
  * Pin assignments
  */
 #define SPI_BUS         HSPI
-#define RESET_PIN       33
-#define DC_PIN          23
-#define CS_PIN          15
-#define BUSY_PIN        27
+#define DIN_PIN         -1 // COPI
+#define CLK_PIN         -1 // SCK
+#define CS_PIN          15 // CS
+#define DC_PIN          23 // arbitrary
+#define RESET_PIN       33  // arbitrary
+#define BUSY_PIN        27 // arbitrary
 
 /**
  * If debug logs should be printed over serial
